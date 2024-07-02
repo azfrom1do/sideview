@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
-    public KeyCode moveLeft = KeyCode.LeftArrow;
-    public KeyCode moveRIght = KeyCode.RightArrow;
+    public KeyCode moveLeft = KeyCode.A;
+    public KeyCode moveRight = KeyCode.D;
     public float speed = 1;
     public float jumpForce = 300f;
     private Rigidbody rigidbody;
@@ -26,11 +26,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey(moveLeft))
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            rigidbody.velocity = new Vector2(speed*-1, rigidbody.velocity.y );
         }
-        if (Input.GetKey(moveRIght))
-        { 
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        if (Input.GetKey(moveRight))
+        {
+            rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)&& canjump)
@@ -42,9 +42,14 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Floor")
+        if (collision.gameObject.tag == "Floor")
         {
             canjump = true;
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+    
     }
 }
