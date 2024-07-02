@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float speed = 1;
     public float jumpForce = 300f;
     private Rigidbody rigidbody;
-
+    public bool canjump = false;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -29,13 +29,22 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         if (Input.GetKey(moveRIght))
-        {
+        { 
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&& canjump)
         {
+            canjump = false;
             rigidbody.AddForce(Vector3.up * jumpForce);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Floor")
+        {
+            canjump = true;
         }
     }
 }
