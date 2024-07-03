@@ -24,7 +24,7 @@ public class PressedCollider : MonoBehaviour
         {
             Debug.Log(player.GetComponent<PlayerMove>().canjump);
             player.GetComponent<PlayerMove>().canjump = true;
-            player.GetComponent<PlayerMove>().Pressed = true;
+            //player.GetComponent<PlayerMove>().Pressed = true;
         }
     }
     //바닦에서 떨어지면 점프 못함
@@ -33,7 +33,7 @@ public class PressedCollider : MonoBehaviour
         if (other.gameObject.tag == "Floor")
         {
             player.GetComponent<PlayerMove>().canjump = false;
-            player.GetComponent<PlayerMove>().Pressed = false;
+            //player.GetComponent<PlayerMove>().Pressed = false;
         }
 
     }
