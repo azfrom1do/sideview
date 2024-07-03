@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
     public KeyCode moveLeft = KeyCode.A;
@@ -38,5 +38,21 @@ public class PlayerMove : MonoBehaviour
         {
             rigidbody.AddForce(Vector3.up * jumpForce);
         }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            canjump = true;
+        }
+    }
+    //바닦에서 떨어지면 점프 못함
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            canjump = false;
+        }
+
     }
 }
