@@ -53,6 +53,5 @@ public class PlayerMove : MonoBehaviour
         {
             canjump = false;
         }
-
     }
 }
