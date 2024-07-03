@@ -10,7 +10,9 @@ public class PlayerMove : MonoBehaviour
     public float speed = 1;
     public float jumpForce = 300f;
     private Rigidbody rigidbody;
-    public bool canjump = false;
+    public bool canjump = true;
+    public bool Pressed = true;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -24,32 +26,17 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(moveLeft))
+        if (Input.GetKey(moveLeft) && Pressed)
         {
-            rigidbody.velocity = new Vector2(speed*-1, rigidbody.velocity.y );
+            rigidbody.velocity = new Vector2(speed * -1, rigidbody.velocity.y);
         }
-        if (Input.GetKey(moveRight))
+        if (Input.GetKey(moveRight) && Pressed)
         {
             rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)&& canjump)
+        if (Input.GetKeyDown(KeyCode.Space) && canjump)
         {
-            canjump = false;
             rigidbody.AddForce(Vector3.up * jumpForce);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            canjump = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-    
     }
 }
