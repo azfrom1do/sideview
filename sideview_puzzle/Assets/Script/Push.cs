@@ -7,17 +7,10 @@ public class Push : MonoBehaviour
     public float PushForceX = 0;
     public float PushForceY = 300f;
 
-    void Start()
-    {
-        
-    }
+    /* Collider 충돌시 플레이어일 경우 대상을 PushForceX, PushForceY 방향으로 addForce로 밀어냄
+     */
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /**target을 PushForceX, PushForceY 방향으로 밀쳐냄*/
     private void Push_obj(GameObject target)
     {
         target.GetComponent<Rigidbody>().AddForce(PushForceX, PushForceY, 0);
@@ -31,3 +24,10 @@ public class Push : MonoBehaviour
         }
     }
 }
+
+/* 
+ * 생성 : 2024.07.23
+ * 변경 : 2024.07.24
+ * 이름 : 윤종현
+ * 
+ */

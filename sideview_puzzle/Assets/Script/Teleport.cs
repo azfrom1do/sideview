@@ -5,29 +5,30 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject TeleportPoint;
+    public string targetTag = "Player";
 
-    void Start()
-    {
-        
-    }
+    /* Collider trigger 감지시 대상을 TeleportPoint의 위치로 이동시킴
+     */
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /**target을 TeleportPoint의 position으로 이동*/
     private void TP(GameObject target)
     {
         if (TeleportPoint) target.transform.position = TeleportPoint.transform.position;
         else Debug.Log("not found teleport point");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag.Equals("Player"))
+        if (other.gameObject.tag.Equals(targetTag))
         {
-            TP(collision.gameObject);
+            TP(other.gameObject);
         }
     }
 }
+
+/* 
+ * 생성 : 2024.07.23
+ * 변경 : 2024.07.24
+ * 이름 : 윤종현
+ * 
+ */

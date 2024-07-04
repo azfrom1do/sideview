@@ -1,55 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class Button : MonoBehaviour
 {
     public GameObject interactObject;
-    public GameObject movePoint;
+    public Transform movePosition;
+    private Vector3 movePoint;
     private Vector3 originPoint;
-    public float moveSpeed = 10;
-    public float backSpeed = 5;
+    public float targetMoveSpeed = 5;
+    public float targetBackSpeed = 3;
 
     private bool isPress;
-
-    void Start()
+    private Rigidbody interactObjectRigid;
+    void Awake()
     {
-        if(interactObject) originPoint = interactObject.transform.position;
-        else Debug.Log(gameObject.name + " Button Script : not found interact object");
+        if (interactObject && movePosition)
+        {
+            movePoint = movePosition.position;
+            originPoint = interactObject.transform.position;
+        }
+        else Debug.Log(gameObject.name + " Button Script : not found interactObject or movePosition");
 
         isPress = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        if (!isPress)
+        {
+            interactObject.transform.Translate((originPoint - interactObject.transform.position) * targetBackSpeed * Time.deltaTime);
+        }
+        else
+        {
+            interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime);
+        }
     }
 
-    private void PressButton(GameObject target, float speed)
+    /* 눌려있는동안 target이 movePoint로 이동
+     * 떼는 순간 다시 target이 originPoint로 복귀
+     */
+
+    /**버튼눌림(밟힘)*/
+    private void PressButton()
     {
-        //target.transform.position = movePoint.transform.position;
-        target.transform.Translate((movePoint.transform.position - target.transform.position) * speed * Time.deltaTime);
+        isPress = true;
+
         Debug.Log("Button Down");
     }
-    private void ReleaseButton(GameObject target, float speed)
+
+    /**버튼풀림(발땜)*/
+    private void ReleaseButton()
     {
-        target.transform.position = originPoint;
+        isPress = false;
+
         Debug.Log("Button Up");
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
-        else if(isPress)PressButton(interactObject, moveSpeed);
-
-        isPress = true;
+        if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
+        PressButton();
     }
     private void OnTriggerExit(Collider other)
     {
         if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
-        else ReleaseButton(interactObject, backSpeed);
-
-        isPress = false;
+        else ReleaseButton();
     }
 }
+
+/* 
+ * 최초작성 : 2024.07.23
+ * 변경일자 : 2024.07.24
+ * 작업자 : 윤종현
+ * 
+ */
