@@ -7,32 +7,28 @@ public class PressedCollider : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Debug.Log(player.GetComponent<PlayerMove>().canjump);
-        //Debug.Log(player.GetComponent<PlayerMove>().Pressed);
 
     }
     //바닦에 닿으면 점프 가능해짐
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Floor")
         {
-            player.GetComponent<PlayerMove>().Pressed = false;
-            player.GetComponent<PlayerMove>().canjump = false;
-            Invoke("OnInvoke",0.1f);
+        player.GetComponent<PlayerMove>().canjump = true;
+        }   
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
+        player.GetComponent<PlayerMove>().canjump = false;
+            
         }
             
     }
-    void OnInvoke()
-    {
-        Debug.Log("1초 기다림");
-        player.GetComponent<PlayerMove>().Pressed = true;
-        player.GetComponent<PlayerMove>().canjump = true;
-    }
-   
 }
