@@ -49,7 +49,7 @@ public class Button : MonoBehaviour
     {
         isPress = true;
 
-        Debug.Log("Button Down");
+        //Debug.Log("Button Down");
     }
 
     /**버튼풀림(발땜)*/
@@ -57,7 +57,7 @@ public class Button : MonoBehaviour
     {
         isPress = false;
 
-        Debug.Log("Button Up");
+        //Debug.Log("Button Up");
     }
 
     private void OnTriggerStay(Collider other)
