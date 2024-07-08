@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))] // Add Rigidbody Component
 public class BreakingFloor : MonoBehaviour
 {
     public Color ColorToChange = new Color(255 / 255f, 127 / 255f, 127 / 255f); //default is light red
@@ -24,8 +24,10 @@ public class BreakingFloor : MonoBehaviour
         originPoint = transform.position;
         originColor = gameObject.GetComponent<Renderer>().material.color;
 
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<Rigidbody>().constraints = 
+            RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
     private void OnCollisionEnter(Collision collision)
