@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Push : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Push : MonoBehaviour
     /**target을 PushForceX, PushForceY 방향으로 밀쳐냄*/
     private void Push_obj(GameObject target)
     {
+        target.GetComponent<Rigidbody>().velocity = Vector3.zero;
         target.GetComponent<Rigidbody>().AddForce(PushForceX, PushForceY, 0);
     }
 
@@ -26,8 +28,8 @@ public class Push : MonoBehaviour
 }
 
 /* 
- * 생성 : 2024.07.23
- * 변경 : 2024.07.24
+ * 생성 : 2024.07.03
+ * 변경 : 2024.07.04
  * 이름 : 윤종현
  * 
  */

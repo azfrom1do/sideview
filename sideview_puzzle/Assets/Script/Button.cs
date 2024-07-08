@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class Button : MonoBehaviour
 {
-    public GameObject interactObject;
-    public Transform movePosition;
+    [SerializeField] public GameObject interactObject;
+    [SerializeField] public Transform movePosition;
     private Vector3 movePoint;
     private Vector3 originPoint;
     public float targetMoveSpeed = 5;
     public float targetBackSpeed = 3;
 
     private bool isPress;
-    private Rigidbody interactObjectRigid;
+
     void Awake()
     {
         if (interactObject && movePosition)
@@ -37,6 +35,7 @@ public class Button : MonoBehaviour
         else
         {
             interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime);
+
         }
     }
 
@@ -73,8 +72,8 @@ public class Button : MonoBehaviour
 }
 
 /* 
- * 최초작성 : 2024.07.23
- * 변경일자 : 2024.07.24
+ * 최초작성 : 2024.07.03
+ * 변경일자 : 2024.07.08
  * 작업자 : 윤종현
  * 
  */
