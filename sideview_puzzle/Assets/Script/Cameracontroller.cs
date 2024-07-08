@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     {
         if(canCameraController == true)
         {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(PlayerTransform.position.x, PlayerTransform.position.y-0.85f, PlayerTransform.position.z)+ cameraPosition, Time.deltaTime * 0.9f);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(PlayerTransform.position.x, PlayerTransform.position.y-0.85f, PlayerTransform.position.z)+ cameraPosition, Time.deltaTime * 0.99f);
         }
         
     }
