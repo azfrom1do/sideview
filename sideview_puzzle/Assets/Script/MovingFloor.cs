@@ -20,6 +20,7 @@ public class MovingFloor : MonoBehaviour
      * point1 방향으로 먼저 이동
      * 본인의 y보다 대상의 y가 높아야 이동시킴 (위에 올라탄 대상만)
      * 현재 speed가 약 3이상이 되면 플레이어가 반대쪽으로 이동할 때 버벅거림이 있음
+     * 
      */
 
     void Awake()

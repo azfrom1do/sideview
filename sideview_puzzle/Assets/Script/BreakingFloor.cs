@@ -12,12 +12,14 @@ public class BreakingFloor : MonoBehaviour
     private Vector3 originPoint;
     private Color originColor;
     private bool isFalling; //BreakingFloor끼리 닿으면 소멸해버서 조건 추가
+    private bool col_player;    //미완성, 비활성화중
 
     /* 생성시 현재 위치와 현재 자신의 색상을 기억
      * 플레이어가 위에서 닿으면 Breaking 코루틴 호출
      * 색상을 바꾸고 breakingTime 시간 동안 흔들린 다음 isKinematic을 끄고 떨어짐
      * regenTime 시간 이후 기억해 뒀던 위치로 복귀 및 색상 복구
      * isKinematic 다시 활성화
+     * 
      */
 
     void Awake()
@@ -30,6 +32,7 @@ public class BreakingFloor : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().constraints = 
             RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         isFalling = false;
+        col_player = false;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,6 +49,20 @@ public class BreakingFloor : MonoBehaviour
             gameObject.GetComponent<Collider>().enabled = false;
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            //col_player = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            //col_player = false;
+        }
+    }
 
     IEnumerator Breaking()
     {
@@ -59,24 +76,28 @@ public class BreakingFloor : MonoBehaviour
             transform.position += Vector3.left * 0.04f;
         }
 
+        isFalling = true;
         gameObject.GetComponent<Collider>().isTrigger = true;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        isFalling = true;
 
         yield return new WaitForSeconds(regenTime);
 
-        gameObject.GetComponent<Renderer>().enabled = true;
+        isFalling = false;
         gameObject.GetComponent<Collider>().enabled = true;
-        gameObject.GetComponent<Collider>().isTrigger = false;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         transform.position = originPoint;
+        while (col_player)
+        {
+            yield return new WaitForSeconds(regenTime * 0.5f);
+        }
+        gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.GetComponent<Collider>().isTrigger = false;
         gameObject.GetComponent<Renderer>().material.color = originColor;
-        isFalling = false;
     }
 }
 
 /* 
  * 최초작성 : 2024.07.08
- * 변경일자 : 2024.07.09
+ * 변경일자 : 2024.07.10
  * 작업자 : 윤종현
  */
