@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,7 +11,6 @@ public class Button : MonoBehaviour
     private Vector3 originPoint;
     public float targetMoveSpeed = 5;
     public float targetBackSpeed = 3;
-    public bool isDisposable = false;   //버튼 누르는 순간 끝까지 작동후 자체 파괴
 
     private bool isPress;
 
@@ -30,27 +28,18 @@ public class Button : MonoBehaviour
 
     private void Update()
     {
-        if (!isDisposable)
+        if (!isPress)
         {
-            if (!isPress)
-            {
-                interactObject.transform.Translate((originPoint - interactObject.transform.position) * targetBackSpeed * Time.deltaTime);
-            }
-            else
-            {
-                interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime);
-            }
+            interactObject.transform.Translate((originPoint - interactObject.transform.position) * targetBackSpeed * Time.deltaTime);
         }
         else
         {
-            if (isPress) DisposableButton();
+            interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime);
         }
     }
 
     /* 눌려있는동안 target이 movePoint로 이동
      * 떼는 순간 다시 target이 originPoint로 복귀
-     * isDisposable가 true라면 닿는 순간 다시 떨어지더라도 끝까지 movePoint로 이동 후 자체 파괴, 즉 이때는 targetBackSpeed이 몇이건 상관 없어짐
-     * 
      */
 
     /**버튼눌림(밟힘)*/
@@ -68,47 +57,22 @@ public class Button : MonoBehaviour
 
         //Debug.Log("Button Up");
     }
-    private void DisposableButton()
-    {
-        if (Vector3.Distance(movePoint, interactObject.transform.position) <= 0.1f)
-        {
-            Destroy(gameObject);
-        }
-        interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime); 
-    }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!isDisposable)
-        {
-            if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
-            PressButton();
-        }
+        if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
+        PressButton();
     }
     private void OnTriggerExit(Collider other)
     {
-        if (!isDisposable)
-        {
-            if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
-            else ReleaseButton();
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (isDisposable)
-        {
-            if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
-            else
-            {
-                isPress = true;
-            }
-        }
+        if (!interactObject) Debug.Log(gameObject.name + " Button Script : not found interact object");
+        else ReleaseButton();
     }
 }
 
 /* 
  * 최초작성 : 2024.07.03
- * 변경일자 : 2024.07.10
+ * 변경일자 : 2024.07.08
  * 작업자 : 윤종현
  * 
  */

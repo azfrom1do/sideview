@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform PlayerTransform; 
-    Vector3 cameraPosition = new Vector3(0, 4, -10);
+    private Vector3 playerTransform;
+    Vector3 cameraOffset = new Vector3(0, 4, -10);
     public bool canCameraController = true;
+    public float duration = 0.9f;
+    private bool isLerping = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     void FixedUpdate()
     {
-        if(canCameraController == true)
+        if (canCameraController && !isLerping)
         {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(PlayerTransform.position.x, PlayerTransform.position.y-0.85f, PlayerTransform.position.z)+ cameraPosition, Time.deltaTime * 0.99f);
+            StartCoroutine(LerpToPlayer());
         }
+    }
+
+    IEnumerator LerpToPlayer()
+    {
+        playerTransform = GameObject.FindWithTag("Player").transform.position;
+        isLerping = true;
+        float timeElapsed = 0;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = playerTransform + cameraOffset;
+        
+        while (timeElapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition; // 최종 위치로 설정
+        isLerping = false;
         
     }
 }
+
