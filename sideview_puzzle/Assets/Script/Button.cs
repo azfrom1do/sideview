@@ -35,7 +35,6 @@ public class Button : MonoBehaviour
         else
         {
             interactObject.transform.Translate((movePoint - interactObject.transform.position) * targetMoveSpeed * Time.deltaTime);
-
         }
     }
 
