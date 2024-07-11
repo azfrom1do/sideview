@@ -9,11 +9,13 @@ public class CameraController : MonoBehaviour
     public bool canCameraController = true;
     public float duration = 0.9f;
     private bool isLerping = false;
+    [SerializeField]
+    private AnimationCurve moveCurve;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     void FixedUpdate()
@@ -31,16 +33,16 @@ public class CameraController : MonoBehaviour
         float timeElapsed = 0;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = playerTransform + cameraOffset;
-        
+
         while (timeElapsed < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, duration);
+            
             yield return null;
         }
         transform.position = targetPosition; // 최종 위치로 설정
         isLerping = false;
-        
+
     }
 }
-

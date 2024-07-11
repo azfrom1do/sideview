@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraMove : MonoBehaviour
 {
-    private GameObject cameraController;
-    public Transform cameraMovePoint; // 카메라가 이동할 목표 지점
-    public float duration = 0.9f; // 카메라가 이동하는 데 걸리는 시간
-
+    public GameObject triggerCamera = null;
     // Start is called before the first frame update
     void Start()
     {
-        cameraController = GameObject.FindWithTag("MainCamera");
+
     }
 
     // Update is called once per frame
@@ -22,26 +20,20 @@ public class CameraMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        cameraController.GetComponent<CameraController>().canCameraController = false;
-        StartCoroutine(MoveCamera());
+        if(other.gameObject.tag == "Player")
+        {
+            triggerCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
+            triggerCamera.GetComponent<CinemachineVirtualCamera>().Priority = 11;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        cameraController.GetComponent<CameraController>().canCameraController = true;
-    }
-
-    private IEnumerator MoveCamera()
-    {
-        Vector3 startPosition = cameraController.transform.position;
-        float timeElapsed = 0;
-
-        while (timeElapsed < duration)
+        if (other.gameObject.tag == "Player")
         {
-            cameraController.transform.position = Vector3.Lerp(startPosition,cameraMovePoint.position, timeElapsed / duration);
-            timeElapsed += Time.deltaTime;
-            yield return null;
+            triggerCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
+            triggerCamera.GetComponent<CinemachineVirtualCamera>().Priority = 9;
+            
         }
-        cameraController.transform.position = cameraMovePoint.position; // 최종 위치로 설정
     }
 }
