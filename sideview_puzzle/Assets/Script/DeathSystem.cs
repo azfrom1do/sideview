@@ -12,6 +12,7 @@ public class DeathSystem : MonoBehaviour
     public GameObject Frefab3F;
     public GameObject Frefab4F;
     public GameObject Frefab5F;
+    public GameObject Frefab6F;
     public Transform mapPosition;
     
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class DeathSystem : MonoBehaviour
     }
     public void Death()
     {
-        if (0 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 4)
+        if (0 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 3)
         {
             currentMap = GameObject.FindWithTag("1F");
             Transform mapTransform = currentMap.transform;
@@ -40,7 +41,7 @@ public class DeathSystem : MonoBehaviour
             currentMap = Instantiate(Frefab1F, mapTransform.position, mapTransform.rotation);
             character();
         }
-        if (4 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 7)
+        if (3 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 5)
         {
             currentMap = GameObject.FindWithTag("2F");
             Transform mapTransform = currentMap.transform;
@@ -48,7 +49,7 @@ public class DeathSystem : MonoBehaviour
             currentMap = Instantiate(Frefab2F, mapTransform.position, mapTransform.rotation);
             character();
         }
-        if (7 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 9)
+        if (5 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 7)
         {
             currentMap = GameObject.FindWithTag("3F");
             Transform mapTransform = currentMap.transform;
@@ -57,7 +58,7 @@ public class DeathSystem : MonoBehaviour
             character();
         }
 
-        if (9 < PlayerPrefs.GetInt("PointNum")&& PlayerPrefs.GetInt("PointNum")<=11)
+        if (10 < PlayerPrefs.GetInt("PointNum")&& PlayerPrefs.GetInt("PointNum")<=12)
         {
             currentMap = GameObject.FindWithTag("4F");
             Transform mapTransform = currentMap.transform;
@@ -66,12 +67,20 @@ public class DeathSystem : MonoBehaviour
             character();
         }
 
-        if (11 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 14)
+        if (7 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 9)
         {
             currentMap = GameObject.FindWithTag("5F");
             Transform mapTransform = currentMap.transform;
             Destroy(currentMap.gameObject);
             currentMap = Instantiate(Frefab5F, mapTransform.position, mapTransform.rotation);
+            character();
+        }
+        if (9 < PlayerPrefs.GetInt("PointNum") && PlayerPrefs.GetInt("PointNum") <= 10)
+        {
+            currentMap = GameObject.FindWithTag("6F");
+            Transform mapTransform = currentMap.transform;
+            Destroy(currentMap.gameObject);
+            currentMap = Instantiate(Frefab6F, mapTransform.position, mapTransform.rotation);
             character();
         }
     }
