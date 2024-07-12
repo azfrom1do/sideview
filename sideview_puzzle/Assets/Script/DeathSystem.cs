@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathSystem : MonoBehaviour
 {
+    public GameObject player; 
     private Transform playerTransform;
     public GameObject currentMap;
     public GameObject Frefab1F;
@@ -17,6 +18,7 @@ public class DeathSystem : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class DeathSystem : MonoBehaviour
     { 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Death();
+            StartCoroutine(Timer());
         }
         
     }
@@ -78,5 +80,11 @@ public class DeathSystem : MonoBehaviour
         playerTransform.position = new Vector3(PlayerPrefs.GetFloat("PlayerPositionX"),
                         PlayerPrefs.GetFloat("PlayerPositionY"),
                         PlayerPrefs.GetFloat("PlayerPositionZ"));
+    }
+    public IEnumerator Timer()
+    {
+        player.GetComponent<FadeInOut>().Fade();
+        yield return new WaitForSeconds(1f);
+        Death();
     }
 }

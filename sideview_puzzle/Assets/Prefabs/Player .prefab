@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6824853274224142460}
   - component: {fileID: 1913263126492194433}
   - component: {fileID: 2952312899842840314}
+  - component: {fileID: 3313167871284230311}
   m_Layer: 7
   m_Name: 'Player '
   m_TagString: Player
@@ -207,6 +208,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a103136868151fc47b8b850147f396df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  currentMap: {fileID: 0}
+  Frefab1F: {fileID: 6793591787167030094, guid: 726a7004f2ab4714ebdae1d3fe6415c4, type: 3}
+  Frefab2F: {fileID: 7839178364662241660, guid: ce15c99bb5a9a6648b525a26c32b8206, type: 3}
+  Frefab3F: {fileID: 84266146217466759, guid: 622769d36dd7b3c459e0ce5200320914, type: 3}
+  Frefab4F: {fileID: 1700762779387587392, guid: f576fe022f340d345b997074f081f1cc, type: 3}
+  Frefab5F: {fileID: 8606145077617576496, guid: 2a1d23c80d5df9d44be028bc4fdfe5a5, type: 3}
+  mapPosition: {fileID: 0}
+--- !u!114 &3313167871284230311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774875755983145191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d167311542c9d45a19bf239c680e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
 --- !u!1 &7677824507319373230
 GameObject:
   m_ObjectHideFlags: 0
