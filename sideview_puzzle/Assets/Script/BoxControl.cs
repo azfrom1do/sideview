@@ -9,7 +9,7 @@ public class BoxControl : MonoBehaviour
     private Rigidbody rigidbody;
     GameObject player;
     Rigidbody playerRigid;
-    float boxSizeX;
+    private float boxSizeX = 2;
 
     public bool isGrip = false; //코드 수정후 외부에서도 사용가능
     private KeyCode moveLeft;
@@ -25,8 +25,20 @@ public class BoxControl : MonoBehaviour
         }
         else Debug.Log("Player Tag not found");
 
-        boxSizeX = GetComponent<BoxCollider>().size.x * transform.localScale.x;
         //박스의 x길이
+        if (GetComponent<BoxCollider>())
+        {
+            boxSizeX = GetComponent<BoxCollider>().size.x * transform.localScale.x;
+        }
+        else if(GetComponent<SphereCollider>())
+        {
+            // 구체
+            boxSizeX = GetComponent<SphereCollider>().radius * 2 * transform.localScale.x;
+        }
+        else
+        {
+            Debug.Log(gameObject.name + " BoxControl Script : BoxCollider not found");
+        }
 
         moveLeft = player.GetComponent<PlayerMove>().moveLeft;
         moveRight = player.GetComponent<PlayerMove>().moveRight;
