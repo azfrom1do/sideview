@@ -12,7 +12,7 @@ public class FadeInOut : MonoBehaviour
         StartCoroutine(FadeFlow());
 
     }
-    IEnumerator FadeFlow()
+    public IEnumerator FadeFlow()
     {
         Panel.gameObject.SetActive(true);
         time = 0f;

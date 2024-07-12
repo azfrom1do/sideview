@@ -58,12 +58,13 @@ public class DeathSystem : MonoBehaviour
             character();
         }
 
-        if (10 < PlayerPrefs.GetInt("PointNum")&& PlayerPrefs.GetInt("PointNum")<=12)
+        if (10 < PlayerPrefs.GetInt("PointNum")&& PlayerPrefs.GetInt("PointNum")<=13)
         {
             currentMap = GameObject.FindWithTag("4F");
             Transform mapTransform = currentMap.transform;
             Destroy(currentMap.gameObject);
             currentMap = Instantiate(Frefab4F, mapTransform.position, mapTransform.rotation);
+
             character();
         }
 
