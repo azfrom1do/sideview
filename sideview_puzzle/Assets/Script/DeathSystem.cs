@@ -93,7 +93,7 @@ public class DeathSystem : MonoBehaviour
     }
     public IEnumerator Timer()
     {
-        player.GetComponent<FadeInOut>().Fade();
+        player.GetComponent<FadeInOut>().Fade1T();
         yield return new WaitForSeconds(1f);
         Death();
     }

@@ -18,12 +18,12 @@ public class Ladder : MonoBehaviour
     {
         if(isLadder && Input.GetKey(KeyCode.W))
         {
-            player.transform.Translate(Vector3.up * 0.01f);
+            player.transform.Translate(Vector3.up * 0.03f);
             //StartCoroutine(Breaking());
         }
         else if (isLadder && Input.GetKey(KeyCode.S))
         {
-            player.transform.Translate(Vector3.down * 0.01f);
+            player.transform.Translate(Vector3.down * 0.03f);
         }
 
     }

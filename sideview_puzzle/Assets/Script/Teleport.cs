@@ -10,19 +10,19 @@ public class Teleport : MonoBehaviour
     /* Collider trigger 감지시 대상을 TeleportPoint의 위치로 이동시킴
      */
 
-    /**target을 TeleportPoint의 position으로 이동*/
-    private void TP(GameObject target)
-    {
-        if (TeleportPoint) target.transform.position = TeleportPoint.transform.position;
-        else Debug.Log("not found teleport point");
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals(targetTag))
         {
-            TP(other.gameObject);
+            StartCoroutine(TP(other.gameObject));
         }
+    }
+    public IEnumerator TP(GameObject player)
+    {
+        player.GetComponent<FadeInOut>().Fade4T();
+        yield return new WaitForSeconds(1f);
+        player.transform.position = TeleportPoint.transform.position;
     }
 }
 
