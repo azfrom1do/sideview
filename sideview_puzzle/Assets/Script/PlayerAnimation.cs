@@ -7,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     public Transform target;
     public KeyCode moveLeft = KeyCode.A;
     public KeyCode moveRight = KeyCode.D;
+    public GameObject player;
 
     Animator animator;
 
@@ -17,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        //transform.LookAt(target);
+        transform.LookAt(target);
         Anim();
     }
 
@@ -26,21 +27,37 @@ public class PlayerAnimation : MonoBehaviour
         if (Input.GetKey(moveLeft))
         {
             animator.SetBool("isWalk", true);
-            //target.position = transform.position + Vector3.left;
+            if(!animator.GetBool("isPush")) target.position = transform.position + Vector3.left;
         }
         else if (Input.GetKey(moveRight))
         {
             animator.SetBool("isWalk", true);
-            //target.position = transform.position + Vector3.right;
+            if (!animator.GetBool("isPush")) target.position = transform.position + Vector3.right;
         }
         else
         {
             animator.SetBool("isWalk", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!player.GetComponent<PlayerMove>().canjump)
         {
-            animator.SetTrigger("doJump");
+            animator.SetBool("isJump", true);
         }
+        if (player.GetComponent<PlayerMove>().canjump)
+        {
+            animator.SetBool("isJump", false);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Floor"))
+        {
+            if(Input.GetKey(KeyCode.P)) animator.SetBool("isPush", true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("isPush", false);
     }
 }

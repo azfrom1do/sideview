@@ -15,7 +15,7 @@ C:/Unity_project/ARVR/sideview/sideview/sideview_puzzle
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-51675
+60769
 Successfully changed project path to: C:/Unity_project/ARVR/sideview/sideview/sideview_puzzle
 C:/Unity_project/ARVR/sideview/sideview/sideview_puzzle
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Unity_project/ARVR/sideview/sideview/sideview_puzzle
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14556] Host "[IP] 192.168.164.97 [Port] 0 [Flags] 2 [Guid] 928111477 [EditorId] 928111477 [Version] 1048832 [Id] WindowsEditor(7,YJH-v16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [2708] Host "[IP] 192.168.164.97 [Port] 0 [Flags] 2 [Guid] 1785858783 [EditorId] 1785858783 [Version] 1048832 [Id] WindowsEditor(7,YJH-v16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14556] Host "[IP] 192.168.164.97 [Port] 0 [Flags] 2 [Guid] 928111477 [EditorId] 928111477 [Version] 1048832 [Id] WindowsEditor(7,YJH-v16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [2708] Host "[IP] 192.168.164.97 [Port] 0 [Flags] 2 [Guid] 1785858783 [EditorId] 1785858783 [Version] 1048832 [Id] WindowsEditor(7,YJH-v16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 24 workers.
-Refreshing native plugins compatible for Editor in 11.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 9.07 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.35f1 (011206c7a712)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56032
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56588
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007454 seconds.
-- Loaded All Assemblies, in  0.359 seconds
+Registered in 0.009136 seconds.
+- Loaded All Assemblies, in  0.605 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 465 ms
+Android Extension - Scanning For ADB Devices 1026 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.830 seconds
-Domain Reload Profiling: 1189ms
-	BeginReloadAssembly (97ms)
+- Finished resetting the current domain, in  1.432 seconds
+Domain Reload Profiling: 2036ms
+	BeginReloadAssembly (232ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (56ms)
-	LoadAllAssembliesAndSetupDomain (166ms)
-		LoadAssemblies (96ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (237ms)
+		LoadAssemblies (231ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (164ms)
-			TypeCache.Refresh (162ms)
-				TypeCache.ScanAssembly (148ms)
+		AnalyzeDomain (234ms)
+			TypeCache.Refresh (232ms)
+				TypeCache.ScanAssembly (215ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (831ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1433ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (762ms)
+		SetupLoadedEditorAssemblies (1368ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (586ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (1159ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (120ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (134ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,66 +118,50 @@ Domain Reload Profiling: 1189ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file data-0000022F18F6DE40 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-0000020405C9C3A0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F19006630 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file data-00000203E4461DD0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F19772420 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll
+Symbol file data-00000203E4461DD0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF7627020 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000002040725DE30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF7627020 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-0000020405F29850 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F192A55E0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000002040725DE30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F192A55E0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000002040725DE30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F19772420 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-00000203E3890080 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF73DA930 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-0000020406592020 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF750EE30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-00000203E4679F60 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF750EE30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-00000203E4679F60 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF73DA930 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-00000203E445AA90 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF7550840 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-00000203E445AA90 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF7550840 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-0000020406A38630 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF7550840 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-00000203E45AA120 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F1B115230 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-00000203E45C4F30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF73DFCA0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-00000203E45DD740 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F1B115230 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-00000203E45E7B50 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022F194C5430 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-00000203E45F4C00 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6AFF230 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-00000203E3D81690 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6B05C40 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-00000203E3A85A30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6B05C40 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6B05C40 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6B10050 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Settings.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6C6D7A0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6C6D7A0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6EF8B80 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6F46D90 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Cinemachine.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000022EF6F52BA0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.820 seconds
-Refreshing native plugins compatible for Editor in 3.92 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.280 seconds
+Refreshing native plugins compatible for Editor in 3.01 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -185,47 +169,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.287 seconds
-Domain Reload Profiling: 3105ms
-	BeginReloadAssembly (190ms)
+- Finished resetting the current domain, in  1.121 seconds
+Domain Reload Profiling: 2399ms
+	BeginReloadAssembly (153ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (1537ms)
-		LoadAssemblies (1154ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (1044ms)
+		LoadAssemblies (411ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (507ms)
-			TypeCache.Refresh (427ms)
-				TypeCache.ScanAssembly (405ms)
-			ScanForSourceGeneratedMonoScriptInfo (60ms)
-			ResolveRequiredComponents (18ms)
-	FinalizeReload (1287ms)
+		AnalyzeDomain (732ms)
+			TypeCache.Refresh (665ms)
+				TypeCache.ScanAssembly (637ms)
+			ScanForSourceGeneratedMonoScriptInfo (52ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1121ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1007ms)
+		SetupLoadedEditorAssemblies (897ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (32ms)
+			InitializePlatformSupportModulesInManaged (24ms)
 			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (114ms)
-			ProcessInitializeOnLoadAttributes (811ms)
-			ProcessInitializeOnLoadMethodAttributes (35ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			BeforeProcessingInitializeOnLoad (101ms)
+			ProcessInitializeOnLoadAttributes (728ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 8.17 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 3.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6959 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 241 unused Assets / (15.1 MB). Loaded Objects now: 7320.
-Memory consumption went from 371.5 MB to 356.4 MB.
-Total: 10.882600 ms (FindLiveObjects: 0.602900 ms CreateObjectMapping: 0.469800 ms MarkObjects: 5.036100 ms  DeleteObjects: 4.772100 ms)
+Unloading 6960 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 237 unused Assets / (15.1 MB). Loaded Objects now: 7321.
+Memory consumption went from 371.6 MB to 356.5 MB.
+Total: 6.401800 ms (FindLiveObjects: 0.395900 ms CreateObjectMapping: 0.266800 ms MarkObjects: 3.416900 ms  DeleteObjects: 2.321200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -242,25 +226,114 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 598331.127082 seconds.
-  path: Assets/TerrainData_6205bf04-2aa1-417b-9a88-0d970daca167.asset
-  artifactKey: Guid(ba4a8f9e5d782cc4f818c2bda4f79c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainData_6205bf04-2aa1-417b-9a88-0d970daca167.asset using Guid(ba4a8f9e5d782cc4f818c2bda4f79c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 24 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 24 workers.
- -> (artifact id: '91a76eace938aa12a20953f7040d7f93') in 0.205943 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/TerrainData_71d29e07-6648-4f58-8982-764e50cb86a0.asset
-  artifactKey: Guid(5bd10209b3e26a34da33a00f9640a0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainData_71d29e07-6648-4f58-8982-764e50cb86a0.asset using Guid(5bd10209b3e26a34da33a00f9640a0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 24 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 24 workers.
- -> (artifact id: 'fb572c1e858600eccb34c9c1667d1262') in 0.020554 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-0000020405D66010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020413AF7050 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000204060BD020 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000204076B7F60 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000204076B7F60 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020413CC6020 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002040606D060 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020410B980A0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002040606D060 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002041033E010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020415EE4010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020413C61AF0 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020413270D30 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000020415EE4010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002041076F010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002040606D060 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002040606D060 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002041076F010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000204137F4010 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000204138BD620 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002040730DE50 doesn't match image C:\Unity_project\ARVR\sideview\sideview\sideview_puzzle\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.479 seconds
+Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.935 seconds
+Domain Reload Profiling: 2411ms
+	BeginReloadAssembly (157ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (250ms)
+		LoadAssemblies (307ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1936ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (820ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (104ms)
+			ProcessInitializeOnLoadAttributes (637ms)
+			ProcessInitializeOnLoadMethodAttributes (37ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 9.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6722 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 193 unused Assets / (15.1 MB). Loaded Objects now: 7336.
+Memory consumption went from 313.4 MB to 298.3 MB.
+Total: 7.680300 ms (FindLiveObjects: 0.496400 ms CreateObjectMapping: 0.321000 ms MarkObjects: 3.758500 ms  DeleteObjects: 3.103100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
 AssetImportWorker is now disconnected from the server

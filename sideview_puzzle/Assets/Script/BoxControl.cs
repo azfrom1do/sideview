@@ -47,7 +47,7 @@ public class BoxControl : MonoBehaviour
     void FixedUpdate()
     {
         //PlayerMime();
-        BoxPull();
+        BoxPullPush();
         if (Input.GetKey(KeyCode.P))
         {
             isGrip = true;
@@ -84,7 +84,7 @@ public class BoxControl : MonoBehaviour
     }
 
     /**박스 당기기*/
-    private void BoxPull()
+    private void BoxPullPush()
     {
         float distance = Vector3.Distance(playerRigid.position, rigidbody.position);
         //플레이어와의 거리
@@ -94,20 +94,30 @@ public class BoxControl : MonoBehaviour
             float playerSpeed = player.GetComponent<PlayerMove>().speed;
             if (playerRigid.position.x > rigidbody.position.x)
             {
-                // 플레이어가 박스의 오른쪽에서 당길 때
+                // 플레이어가 박스의 오른쪽에 있을 때
                 if (Input.GetKey(moveRight))
                 {
-                    // 오른쪽으로 당기기
+                    // 플레이어가 오른쪽으로 움직이면 박스를 당기기
                     rigidbody.velocity = new Vector2(playerSpeed, rigidbody.velocity.y);
                 }
+                else if (Input.GetKey(moveLeft))
+                {
+                    // 플레이어가 왼쪽으로 움직이면 박스를 밀기
+                    rigidbody.velocity = new Vector2(-playerSpeed, rigidbody.velocity.y);
+                }
             }
-            if (playerRigid.position.x < rigidbody.position.x)
+            else if (playerRigid.position.x < rigidbody.position.x)
             {
-                // 플레이어가 박스의 왼쪽에서 당길 때
+                // 플레이어가 박스의 왼쪽에 있을 때
                 if (Input.GetKey(moveLeft))
                 {
-                    // 왼쪽으로 당기기
+                    // 플레이어가 왼쪽으로 움직이면 박스를 당기기
                     rigidbody.velocity = new Vector2(-playerSpeed, rigidbody.velocity.y);
+                }
+                else if (Input.GetKey(moveRight))
+                {
+                    // 플레이어가 오른쪽으로 움직이면 박스를 밀기
+                    rigidbody.velocity = new Vector2(playerSpeed, rigidbody.velocity.y);
                 }
             }
         }
