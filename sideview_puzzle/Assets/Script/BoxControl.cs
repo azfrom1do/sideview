@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BoxControl : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody RB;
     GameObject player;
     Rigidbody playerRigid;
     private float boxSizeX = 2;
@@ -17,7 +17,7 @@ public class BoxControl : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        RB = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -65,20 +65,20 @@ public class BoxControl : MonoBehaviour
     private void PlayerMime()
     {
         
-        float distance = Vector3.Distance(playerRigid.position, rigidbody.position);
+        float distance = Vector3.Distance(playerRigid.position, RB.position);
         //플레이어와의 거리
 
         if (distance < boxSizeX * 0.5f + 0.8f && player.gameObject.GetComponent<PlayerMove>().canjump)
         {
-            if (playerRigid.position.x > rigidbody.position.x)
+            if (playerRigid.position.x > RB.position.x)
             {
                 //플레이어가 박스의 오른쪽에서 밀때 왼쪽으로 이동
-                rigidbody.transform.Translate(Vector3.left * player.gameObject.GetComponent<PlayerMove>().speed * Time.deltaTime);
+                RB.transform.Translate(Vector3.left * player.gameObject.GetComponent<PlayerMove>().speed * Time.deltaTime);
             }
-            if (playerRigid.position.x < rigidbody.position.x)
+            if (playerRigid.position.x < RB.position.x)
             {
                 //플레이어가 박스의 왼쪽에서 밀때 오른쪽으로 이동
-                rigidbody.transform.Translate(Vector3.right * player.gameObject.GetComponent<PlayerMove>().speed * Time.deltaTime);
+                RB.transform.Translate(Vector3.right * player.gameObject.GetComponent<PlayerMove>().speed * Time.deltaTime);
             }
         }
     }
@@ -86,45 +86,45 @@ public class BoxControl : MonoBehaviour
     /**박스 당기기*/
     private void BoxPullPush()
     {
-        float distance = Vector3.Distance(playerRigid.position, rigidbody.position);
+        float distance = Vector3.Distance(playerRigid.position, RB.position);
         //플레이어와의 거리
 
         if (distance < boxSizeX * 0.5f + 0.8f && player.GetComponent<PlayerMove>().canjump && isGrip)
         {
             float playerSpeed = player.GetComponent<PlayerMove>().speed;
-            if (playerRigid.position.x > rigidbody.position.x)
+            if (playerRigid.position.x > RB.position.x)
             {
                 // 플레이어가 박스의 오른쪽에 있을 때
                 if (Input.GetKey(moveRight))
                 {
                     // 플레이어가 오른쪽으로 움직이면 박스를 당기기
-                    rigidbody.velocity = new Vector2(playerSpeed, rigidbody.velocity.y);
+                    RB.velocity = new Vector2(playerSpeed, RB.velocity.y);
                 }
                 else if (Input.GetKey(moveLeft))
                 {
                     // 플레이어가 왼쪽으로 움직이면 박스를 밀기
-                    rigidbody.velocity = new Vector2(-playerSpeed, rigidbody.velocity.y);
+                    RB.velocity = new Vector2(-playerSpeed, RB.velocity.y);
                 }
             }
-            else if (playerRigid.position.x < rigidbody.position.x)
+            else if (playerRigid.position.x < RB.position.x)
             {
                 // 플레이어가 박스의 왼쪽에 있을 때
                 if (Input.GetKey(moveLeft))
                 {
                     // 플레이어가 왼쪽으로 움직이면 박스를 당기기
-                    rigidbody.velocity = new Vector2(-playerSpeed, rigidbody.velocity.y);
+                    RB.velocity = new Vector2(-playerSpeed, RB.velocity.y);
                 }
                 else if (Input.GetKey(moveRight))
                 {
                     // 플레이어가 오른쪽으로 움직이면 박스를 밀기
-                    rigidbody.velocity = new Vector2(playerSpeed, rigidbody.velocity.y);
+                    RB.velocity = new Vector2(playerSpeed, RB.velocity.y);
                 }
             }
         }
         else
         {
             // 박스가 멈추도록 속도 초기화
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, rigidbody.velocity.z);
+            RB.velocity = new Vector3(RB.velocity.x, RB.velocity.y, RB.velocity.z);
         }
     }
 }

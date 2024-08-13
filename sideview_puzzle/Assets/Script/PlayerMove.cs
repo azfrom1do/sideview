@@ -9,13 +9,13 @@ public class PlayerMove : MonoBehaviour
     public KeyCode moveRight = KeyCode.D;
     public float speed = 3;
     public float jumpForce = 300f;
-    private Rigidbody rigidbody;
+    private Rigidbody RB;
     public bool canjump = true;
     public bool Pressed = true;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        RB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,15 +28,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey(moveLeft) && Pressed)
         {
-            rigidbody.velocity = new Vector2(speed * -1, rigidbody.velocity.y);
+            RB.velocity = new Vector2(speed * -1, RB.velocity.y);
         }
         if (Input.GetKey(moveRight) && Pressed)
         {
-            rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
+            RB.velocity = new Vector2(speed, RB.velocity.y);
         }
         if (Input.GetKeyDown(KeyCode.Space) && canjump)
         {
-            rigidbody.AddForce(Vector3.up * jumpForce);
+            RB.AddForce(Vector3.up * jumpForce);
         }
     }
 }

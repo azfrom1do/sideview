@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering.PostProcessing;
 
-public class LightingChange : MonoBehaviour
+public class ExposureChange : MonoBehaviour
 {
     public float start = 1f;
     public float end = 0.3f;

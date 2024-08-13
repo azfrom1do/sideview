@@ -1,37 +1,34 @@
-using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
-public class FogColor : MonoBehaviour
+public class FogChange : MonoBehaviour
 {
-    public GameObject Camera;
-    public Collider OffCollider;
-    public Material newSkybox;
-    public Light sceneLight;
-    public float rotationAngle = -60f;
-    public float duration = 60f;
+    public Volume volume;
+    private Fog fog;
+    public float StartPosition;
+    public float EndPosition;
 
-    private void OnTriggerEnter(Collider other)
+    // Start is called before the first frame update
+    void Start()
+    {
+        volume.profile.TryGet<Fog>(out fog);
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            RenderSettings.skybox = newSkybox;
-            RenderSettings.fog = false;
-            StartCoroutine(ChangeLightColor(sceneLight.color, rotationAngle)) ;
+            ChangeFog(other.transform.position);
         }
     }
-    private IEnumerator ChangeLightColor(Color startColor, float rotationAngle)
+    private void ChangeFog(Vector3 PlayerPostion)
     {
-        Quaternion startRotation = sceneLight.transform.rotation;
-        Quaternion endRotation = startRotation * Quaternion.Euler(rotationAngle, 0, 0);
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            sceneLight.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        sceneLight.transform.rotation = endRotation;
-        OffCollider.enabled = false;
+        float t = (PlayerPostion.x - StartPosition) / (EndPosition - StartPosition);
+        float result = Mathf.Lerp(40, 260, t);
+        fog.meanFreePath.value = result;
+
     }
 }
